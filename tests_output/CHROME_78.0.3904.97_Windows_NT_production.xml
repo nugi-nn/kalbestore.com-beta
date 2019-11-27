@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="production"
+    errors="0" failures="1" hostname="" id="" package="production" skipped="0"
+    tests="1" time="28.20" timestamp="">
+  
+    <testcase name="Test Kalbestore.com (DESKTOP-PRODUCTION)" classname="production" time="28.20" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="product search - expected [0;32m&#34;found&#34;[0m but got: [0;31m&#34;not found&#34;[0m [0;90m(5176ms)[0m">    at Object.Test Kalbestore.com (DESKTOP-PRODUCTION) (C:\Users\Nugie\kalbestore.com-beta\tests\production.js:36:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+
+    <failure message="    at Object.Test Kalbestore.com (DESKTOP-PRODUCTION) (C:\Users\Nugie\kalbestore.com-beta\tests\production.js:36:14)">    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

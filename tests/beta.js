@@ -1,6 +1,6 @@
 module.exports = {
     '@tags': ['beta'],
-    'Test Kalbestore.com (DESKTOP)'(browser){
+    'Test Kalbestore.com (DESKTOP-BETA)'(browser){
      
         const search = 'input[name="q"]';
         const inputSearch = 'prenagen';
@@ -30,24 +30,25 @@ module.exports = {
             .click('//*[@id="search"]')
             .setValue('//*[@id="search"]', ['Prenagen Mommy French Vanila 400gr', browser.Keys.ENTER]);
     browser
-            .assert.urlContains('https://www.kalbestore.com/catalogsearch/result/?q=Prenagen+Mommy+French+Vanila+400gr', 'Prenagen Page')
+            .pause(1000)
+            .assert.urlContains('https://betakalbestore.karyahastadinamika.com/catalogsearch/result/?q=Prenagen+Mommy+French+Vanila+400gr', 'Prenagen Page')
             .pause(3000)
-            .waitForElementPresent("//*[@src = 'https://www.kalbestore.com/media/catalog/product/cache/1/small_image/440x/9df78eab33525d08d6e5fb8d27136e95/p/r/prenagen_mommy_van_400gr.jpg']", 'product search')
+            .waitForElementPresent("//*[@src = 'https://betakalbestore.karyahastadinamika.com/media/catalog/product/cache/1/small_image/440x/9df78eab33525d08d6e5fb8d27136e95/p/r/prenagen_mommy_van_400gr.jpg']", 'product search')
             .click("//*[@type = 'button' and @title = 'Tambah ke Troli']")
             .assert.elementPresent("//div[@id = 'category-checkstock-modal' and @class = 'zoom-anim-dialog']")
             .click("//button[@type = 'button' and @id = 'pop-add-to-cart-ajax']")
-            .assert.elementPresent("//*[@src = 'https://www.kalbestore.com/skin/frontend/default/kalbegento/images/loading-cart.gif']", 'loading')
+            .assert.elementPresent("//*[@src = 'https://betakalbestore.karyahastadinamika.com/skin/frontend/default/kalbegento/images/loading-cart.gif']", 'loading')
             .pause(4000)
             .waitForElementPresent("//div[@class = 'notifyjs-bootstrap-base notifyjs-bootstrap-success']", 'pop-up')
             .click("//div[@class = 'notifyjs-bootstrap-base notifyjs-bootstrap-success']")
             .pause(5000)
             .moveToElement("//a[@id = 'ketroli']", 10, 10)
             .waitForElementPresent("//a[@id = 'ketroli']", 'cart')
-            .waitForElementVisible("//*[@class = 'to-troli' and @href = 'https://www.kalbestore.com/checkout/cart' and (text() = 'Lanjut ke pembayaran' or . = 'Lanjut ke pembayaran')]", 'lanjut pembayaran')
+            .waitForElementVisible("//a[@class = 'to-troli' and @href = 'https://betakalbestore.karyahastadinamika.com/checkout/cart']", 'lanjut pembayaran')
             .pause(5000)
-            .click("//a[@class = 'to-troli' and @href = 'https://www.kalbestore.com/checkout/cart']")
+            .click("//a[@class = 'to-troli' and @href = 'https://betakalbestore.karyahastadinamika.com/checkout/cart']")
             .pause(2000)
-            .assert.urlContains('https://www.kalbestore.com/checkout/cart', 'Cart Page')
+            .assert.urlContains('https://betakalbestore.karyahastadinamika.com/checkout/cart', 'Cart Page')
             .assert.elementPresent("//span[@class = 'price']", 'Price');
             browser.expect.element("//tr[@id='cart-item-FCPIH070']/td[2]/p/span/span").text.to.endWith('73.000');
             browser.assert.elementPresent("//tr[@id='cart-item-FCPIH070']/td[2]/p[2]", 'Poins');
@@ -59,11 +60,11 @@ module.exports = {
         .useXpath()
             .click("//button[@type = 'button' and @class = 'button btn-proceed-checkout btn-checkout']")
             .pause(3000)
-            .assert.urlContains('https://www.kalbestore.com/checkout/guest/index/')
+            .assert.urlContains('https://betakalbestore.karyahastadinamika.com/checkout/guest/index/')
             .assert.elementPresent("//button[@class = 'btn-guest-checkout' and @type = 'button']", 'button CHECKOUT TANPA LOGIN')
             .click("//button[@class = 'btn-guest-checkout' and @type = 'button']")
             .pause(3000)
-            .assert.urlContains('https://www.kalbestore.com/checkout/guest/register/')
+            .assert.urlContains('https://betakalbestore.karyahastadinamika.com/checkout/guest/register/')
             .setValue("//*[@type = 'text' and @id = 'firstname']", namaDepan)
             .setValue("//*[@type = 'text' and @id = 'lastname']", namaBelakang)
             .setValue("//*[@type = 'text' and @id = 'email']", email)
@@ -77,7 +78,7 @@ module.exports = {
             .pause(1000)
             .click("//*[@type = 'submit' and @class = 'btn-bottom']")
             .pause(3000)
-            .assert.urlContains('https://www.kalbestore.com/checkout/guest/onepage/', 'CHECKOUT Page')
+            .assert.urlContains('https://betakalbestore.karyahastadinamika.com/checkout/guest/onepage/', 'CHECKOUT Page')
             .waitForElementPresent("//a[@class = 'btn-payments popup' and @href = '#payments-modal']")
             .click("//a[@class = 'btn-payments popup' and @href = '#payments-modal']")
             .waitForElementPresent("//*[@id = 'payments-modal' and @class = 'white-popup-full']")
@@ -93,7 +94,7 @@ module.exports = {
             browser.expect.element("//form[@id='checkoutV2Form']/div/div/div[2]").text.to.endWith('83.000');
             browser.click("//button[@type = 'submit' and @class = 'btn-bottom']")
             .pause(2000)
-            .assert.urlContains("https://www.kalbestore.com/checkout/onepage/success/")
+            .assert.urlContains("https://betakalbestore.karyahastadinamika.com/checkout/onepage/success/")
             .waitForElementPresent("//button[@type='button']", 'Lanjut Belanja')
             .click("//button[@type='button']")
             .saveScreenshot('tests_output/screenshoot.png')

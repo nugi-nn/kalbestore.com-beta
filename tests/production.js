@@ -1,6 +1,6 @@
 module.exports = {
     '@tags': ['production'],
-    'Test Kalbestore.com (DESKTOP)'(browser){
+    'Test Kalbestore.com (DESKTOP-PRODUCTION)'(browser){
      
         const search = 'input[name="q"]';
         const inputSearch = 'prenagen';
@@ -30,6 +30,7 @@ module.exports = {
             .click('//*[@id="search"]')
             .setValue('//*[@id="search"]', ['Prenagen Mommy French Vanila 400gr', browser.Keys.ENTER]);
     browser
+            .pause(1000)
             .assert.urlContains('https://www.kalbestore.com/catalogsearch/result/?q=Prenagen+Mommy+French+Vanila+400gr', 'Prenagen Page')
             .pause(3000)
             .waitForElementPresent("//*[@src = 'https://www.kalbestore.com/media/catalog/product/cache/1/small_image/440x/9df78eab33525d08d6e5fb8d27136e95/p/r/prenagen_mommy_van_400gr.jpg']", 'product search')
@@ -78,6 +79,7 @@ module.exports = {
             .click("//*[@type = 'submit' and @class = 'btn-bottom']")
             .pause(3000)
             .assert.urlContains('https://www.kalbestore.com/checkout/guest/onepage/', 'CHECKOUT Page')
+            .pause(2000)
             .waitForElementPresent("//a[@class = 'btn-payments popup' and @href = '#payments-modal']")
             .click("//a[@class = 'btn-payments popup' and @href = '#payments-modal']")
             .waitForElementPresent("//*[@id = 'payments-modal' and @class = 'white-popup-full']")
