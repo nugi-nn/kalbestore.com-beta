@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="guest-order-betavsprod"
+    errors="1" failures="0" hostname="" id="" package="guest-order-betavsprod" skipped="0"
+    tests="1" time="0.004000" timestamp="">
+  
+    <testcase name="Test Kalbestore.com (DESKTOP)" classname="guest-order-betavsprod" time="0.004000" assertions="0">
+    </testcase>
+  
+
+  
+    <system-err>
+      [0;31m  TypeError: browser.url is not a function
+   - writing an ES6 async test case? - keep in mind that commands return a Promise; 
+   - writing unit tests? - make sure to specify &#34;unit_tests_mode=true&#34; in your config.[0m
+[0;90m       at Object.Test Kalbestore.com (DESKTOP) (C:\Users\Nugie\kalbestore.com-beta\tests\guest-order-betavsprod.js:10:11)
+       at new Promise (&lt;anonymous&gt;)[0m
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>
