@@ -19,6 +19,6 @@
   "homepage": "https://github.com/nugi-nn/kalbestore.com-beta#readme",
   "devDependencies": {
     "chromedriver": "^78.0.1",
-    "nightwatch": "^1.3.1"
+    "nightwatch": "^1.7.13"
   }
 }
